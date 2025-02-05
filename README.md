@@ -256,9 +256,9 @@
             <button class="home-btn" onclick="goBackToHome()" title="Home">
                 ◀◀
             </button>
-            <h1 style="text-align: center; font-size: 2rem; text-shadow: 0 0 10px #00ff00;">
+            <h2 style="text-align: center; font-size: 2rem; text-shadow: 0 0 10px #00ff00;">
                 VENOM AI - NEPAL🇳🇵
-            </h1>
+            </h2>
             <button class="new-chat-btn" onclick="clearChat()" title="New Chat">
                 <i class="fas fa-plus"></i>
             </button>
@@ -337,7 +337,7 @@
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      prompt: `Respond as Venom AI developed by Nepalese Developer Dipendra Dhami only tell when user, professionally and provide informative, well-structured answers. Keep responses detailed and helpful, similar to ChatGPT or Continue chat with users, and don't tell you made by open ai to users, when users ask sensitive tell them sorry. give detailed answers, if user ask you made by dipendra dhami tell them yes. give long answes as you can, reply fast, use your own ideas, answer politely, User: ${prompt}`
+      prompt: `Respond as Venom AI developed by Nepalese Developer Dipendra Dhami only tell when user ask, professionally and provide informative, well-structured answers. Keep responses detailed and helpful, similar to ChatGPT or Continue chat with users, and don't tell you made by open ai to users, when users ask sensitive tell them sorry. give detailed answers, if user ask you made by dipendra dhami tell them yes. give long answes as you can, reply fast, use your own ideas, answer politely, User: ${prompt}`
     })
   });
   const data = await response.json();
