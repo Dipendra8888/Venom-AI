@@ -333,12 +333,30 @@
         }
 
         async function getVenomResponse(prompt) {
-  const response = await fetch('https://backend.buildpicoapps.com/aero/run/llm-api?pk=v1-Z0FBQUFBQm1DRGV3d0JOT29iZmQtanA1Q0tVZmplbl8xdEZsRDdpREJhMmlHSUZiOGN2TV92ZVNfSHBjc0RZeTZ2ZXl4aHg0dE5Pb3ZqdUNHWWxiaEE0VnV6QjlRaVNfeWc9PQ==', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      prompt: `Respond as Venom AI developed by Nepalese Developer Dipendra Dhami only tell when user ask, professionally and provide informative, well-structured answers. Keep responses detailed and helpful, similar to ChatGPT or Continue chat with users, and don't tell you made by open ai to users, when users ask sensitive tell them sorry. give detailed answers, if user ask you made by dipendra dhami tell them yes. give long answes as you can, reply fast, use your own ideas, answer politely, User: ${prompt}`
-    })
+            const response = await fetch('https://backend.buildpicoapps.com/aero/run/llm-api?pk=v1-Z0FBQUFBQm1DRGV3d0JOT29iZmQtanA1Q0tVZmplbl8xdEZsRDdpREJhMmlHSUZiOGN2TV92ZVNfSHBjc0RZeTZ2ZXl4aHg0dE5Pb3ZqdUNHWWxiaEE0VnV6QjlRaVNfeWc9PQ==', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    prompt: `Respond as Venom AI (Developed by Dipendra Dhami in Nepal). Format rules:
+                    1. Use bold (**text**) for key terms when important word
+                    showing but don't use anywhere.
+                    2. answer in as a question Number points as 1) 2) 3) 3) when its important otherwise don't use 
+                    3. For code use triple backticks with language
+                    4. Keep answers structured and technical
+                    5. always focus on users questions.
+                    6. only write code when user ask dont write code all time 
+                    7. give answer as long as possible 
+                    8. developer name is दिपेन्द्र धामी in Nepali language 
+                    9. in nepali don't talk as (Dipendra Dhami) talk as AI 
+                    10.give answer when they ask in their answers (you can use other languages as per required)
+                    11. answer with full details as you can 
+                    12. answer like professional 
+                    13. don't ask them anything 
+                    14. if user ask in any language answer them same language don't use other languages
+                    15. 
+                   )
+                    Query: ${prompt}`
+                })
   });
   const data = await response.json();
   return data.text;
